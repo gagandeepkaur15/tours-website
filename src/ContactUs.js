@@ -1,11 +1,8 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 const ContactUs = () => {
   return (
     <div>
-      <Header />
       <div className="w-full">
         <div className="relative w-full h-64 flex items-center justify-center bg-cover bg-center" 
           style={{ backgroundImage: "url('/images/contact_bg.png')" }}>
@@ -64,7 +61,6 @@ const ContactUs = () => {
         </div>
       </div>
     </div>
-      <Footer />
     </div>
   );
 };

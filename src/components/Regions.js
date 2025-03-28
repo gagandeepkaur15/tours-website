@@ -1,11 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 const Regions = () => {
+  const navigate = useNavigate();
+  
     const packages = [
-      { image: "/images/north.png", title: "North" },
-      { image: "/images/south.png", title: "South" },
-      { image: "/images/central.png", title: "Central" },
-      { image: "/images/east.png", title: "East" },
-      { image: "/images/west.png", title: "West" },
+      { image: "/images/north.png", title: "North",  path: "North"},
+      { image: "/images/south.png", title: "South", path: "South"},
+      { image: "/images/central.png", title: "Central", path: "Central"},
+      { image: "/images/east.png", title: "East", path: "East"},
+      { image: "/images/west.png", title: "West", path: "West"},
     ];
+
+    
   
     return (
       <div className="bg-gray-100 py-10 mt-10">
@@ -20,7 +26,7 @@ const Regions = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {packages.slice(0, 3).map((pkg, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden relative group">
+              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden relative group" onClick={() => navigate(`/region/${pkg.path}`)}>
                 <img
                   src={pkg.image}
                   alt={pkg.title}
@@ -37,7 +43,7 @@ const Regions = () => {
   
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 mt-6 md:mx-auto md:w-2/3">
             {packages.slice(3).map((pkg, index) => (
-              <div key={index + 3} className="bg-white rounded-xl shadow-lg overflow-hidden relative group">
+              <div key={index + 3} className="bg-white rounded-xl shadow-lg overflow-hidden relative group" onClick={() => navigate(`/region/${pkg.path}`)}>
                 <img
                   src={pkg.image}
                   alt={pkg.title}
